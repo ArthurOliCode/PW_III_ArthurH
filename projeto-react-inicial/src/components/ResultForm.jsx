@@ -1,7 +1,7 @@
 export function ResultForm({ lista, num, voltar }) {
   return (
     <section id="center">
-      <div id="form">
+      <div id="form" className="result">
         <ul>
           {lista.map((item, index) => (
             <li key={index}>
