@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { tabelaMult } from "./oprMath.js";
+import { ViewForm } from "./components/ViewForm.jsx";
+import { ResultForm } from "./components/ResultForm.jsx";
 import "./App.css";
 
 /*function App() {
@@ -16,44 +18,33 @@ import "./App.css";
   );
 }*/
 
-function Calcular() {
+function App() {
   const [num, setNum] = useState(0);
   const [lista, setLista] = useState([]);
+  const [isResultado, setIsResultado] = useState(false);
 
   const atuadorConta = (e) => {
     const tabuada = tabelaMult(num, 10);
     setLista(tabuada);
+    setIsResultado(true);
+  };
+
+  const atuadorVoltar = (e) => {
+    setIsResultado(false);
+    setNum(0);
+    setLista([]);
   };
 
   return (
     <>
-      <section id="center">
-        <div id="form">
-          <input
-            id="numForm"
-            type="number"
-            min={0}
-            onChange={(e) => setNum(Number(e.target.value))}
-          />
-        </div>
-
-        <div id="result">
-          <button onClick={atuadorConta}>Calcular</button>
-          <ul>
-            {lista.map((item, index) => (
-              <li key={index}>
-                {index + 1}° : {num} x {index + 1} = {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section></section>
-
+      {isResultado ? (
+        <ResultForm num={num} lista={lista} voltar={atuadorVoltar} />
+      ) : (
+        <ViewForm num={num} setNum={setNum} atuadorConta={atuadorConta} />
+      )}
       <section id="spacer"></section>
     </>
   );
 }
 
-export default Calcular;
+export default App;
