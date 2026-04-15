@@ -10,4 +10,24 @@
     padding: 32px 20px 24px;
     gap: 18px;
   }
+
+  #form #numForm {
+    border-radius: 10%;
+    border-radius: 4%;
+    padding: 15px 12px;
+    font-size: 16px;
+    box-shadow: 4px 10px 14px rgba(0, 0, 0, 0.4);
+  }
+
+  #result button {
+    border-radius: 10%;
+    border-radius: 4%;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+    padding: 9px 12px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    cursor: pointer;
+  }
 }

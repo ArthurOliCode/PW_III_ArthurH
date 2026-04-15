@@ -28,20 +28,25 @@ function Calcular() {
   return (
     <>
       <section id="center">
-        <input
-          id="numForm"
-          type="number"
-          min={0}
-          onChange={(e) => setNum(Number(e.target.value))}
-        />
-        <button onClick={atuadorConta}>Calcular</button>
-        <ul>
-          {lista.map((item, index) => (
-            <li key={index}>
-              {index + 1}° : {num} x {index + 1} = {item}
-            </li>
-          ))}
-        </ul>
+        <div id="form">
+          <input
+            id="numForm"
+            type="number"
+            min={0}
+            onChange={(e) => setNum(Number(e.target.value))}
+          />
+        </div>
+
+        <div id="result">
+          <button onClick={atuadorConta}>Calcular</button>
+          <ul>
+            {lista.map((item, index) => (
+              <li key={index}>
+                {index + 1}° : {num} x {index + 1} = {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section></section>
