@@ -4,7 +4,7 @@
   gap: 25px;
   place-content: center;
   place-items: center;
-  flex-grow: 1;
+  flex-grow: 0.3;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -26,6 +26,12 @@
     border: none;
     border-radius: 10%;
     box-shadow: 6px 18px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .timer {
+    font-family: var(--mono);
+    color: var(--primary);
+    font-size: 1rem;
   }
 
   button {
